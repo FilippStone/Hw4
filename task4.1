@@ -1,0 +1,23 @@
+# Напишите функцию для транспонирования матрицы
+
+import random
+
+SIZE_W = 4
+SIZE_H = 4
+
+matrix = [[0 for x in range(SIZE_W)] for y in range(SIZE_H)]
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        matrix[i][j] = random.randint(0, 20)
+
+
+def my_func(my_matrix: list) -> list:
+    matrix_trance = [[0 for x in range(len(my_matrix))] for y in range(len(my_matrix[0]))]
+    for i in range(len(my_matrix)):
+        for j in range(len(my_matrix[0])):
+            matrix_trance[j][i] = my_matrix[i][j]
+
+    return matrix_trance
+
+
+print(my_func(matrix))
